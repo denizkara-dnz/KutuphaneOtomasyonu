@@ -37,6 +37,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.MaximizeBox = false;
             this.Name = "frmAnaForm";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "KutuphaneOtomasyonu";
             this.ResumeLayout(false);

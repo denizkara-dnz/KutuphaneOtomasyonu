@@ -8,3 +8,13 @@ C:\Users\Deniz\source\repos\KutuphaneOtomasyonu\KutuphaneOtomasyonu\obj\Debug\Ku
 C:\Users\Deniz\source\repos\KutuphaneOtomasyonu\KutuphaneOtomasyonu\obj\Debug\KutuphaneOtomasyonu.csproj.CoreCompileInputs.cache
 C:\Users\Deniz\source\repos\KutuphaneOtomasyonu\KutuphaneOtomasyonu\obj\Debug\KutuphaneOtomasyonu.exe
 C:\Users\Deniz\source\repos\KutuphaneOtomasyonu\KutuphaneOtomasyonu\obj\Debug\KutuphaneOtomasyonu.pdb
+C:\Users\Deniz\Source\Repos\denizkara-dnz\KutuphaneOtomasyonu\KutuphaneOtomasyonu\bin\Debug\KutuphaneOtomasyonu.exe.config
+C:\Users\Deniz\Source\Repos\denizkara-dnz\KutuphaneOtomasyonu\KutuphaneOtomasyonu\bin\Debug\KutuphaneOtomasyonu.exe
+C:\Users\Deniz\Source\Repos\denizkara-dnz\KutuphaneOtomasyonu\KutuphaneOtomasyonu\bin\Debug\KutuphaneOtomasyonu.pdb
+C:\Users\Deniz\Source\Repos\denizkara-dnz\KutuphaneOtomasyonu\KutuphaneOtomasyonu\obj\Debug\KutuphaneOtomasyonu.csprojAssemblyReference.cache
+C:\Users\Deniz\Source\Repos\denizkara-dnz\KutuphaneOtomasyonu\KutuphaneOtomasyonu\obj\Debug\KutuphaneOtomasyonu.frmAnaForm.resources
+C:\Users\Deniz\Source\Repos\denizkara-dnz\KutuphaneOtomasyonu\KutuphaneOtomasyonu\obj\Debug\KutuphaneOtomasyonu.Properties.Resources.resources
+C:\Users\Deniz\Source\Repos\denizkara-dnz\KutuphaneOtomasyonu\KutuphaneOtomasyonu\obj\Debug\KutuphaneOtomasyonu.csproj.GenerateResource.cache
+C:\Users\Deniz\Source\Repos\denizkara-dnz\KutuphaneOtomasyonu\KutuphaneOtomasyonu\obj\Debug\KutuphaneOtomasyonu.csproj.CoreCompileInputs.cache
+C:\Users\Deniz\Source\Repos\denizkara-dnz\KutuphaneOtomasyonu\KutuphaneOtomasyonu\obj\Debug\KutuphaneOtomasyonu.exe
+C:\Users\Deniz\Source\Repos\denizkara-dnz\KutuphaneOtomasyonu\KutuphaneOtomasyonu\obj\Debug\KutuphaneOtomasyonu.pdb
