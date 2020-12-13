@@ -18,3 +18,6 @@ C:\Users\Deniz\Source\Repos\denizkara-dnz\KutuphaneOtomasyonu\KutuphaneOtomasyon
 C:\Users\Deniz\Source\Repos\denizkara-dnz\KutuphaneOtomasyonu\KutuphaneOtomasyonu\obj\Debug\KutuphaneOtomasyonu.csproj.CoreCompileInputs.cache
 C:\Users\Deniz\Source\Repos\denizkara-dnz\KutuphaneOtomasyonu\KutuphaneOtomasyonu\obj\Debug\KutuphaneOtomasyonu.exe
 C:\Users\Deniz\Source\Repos\denizkara-dnz\KutuphaneOtomasyonu\KutuphaneOtomasyonu\obj\Debug\KutuphaneOtomasyonu.pdb
+C:\Users\Deniz\Source\Repos\denizkara-dnz\KutuphaneOtomasyonu\KutuphaneOtomasyonu\obj\Debug\KutuphaneOtomasyonu.frmKitaplar.resources
+C:\Users\Deniz\Source\Repos\denizkara-dnz\KutuphaneOtomasyonu\KutuphaneOtomasyonu\obj\Debug\KutuphaneOtomasyonu.frmKisiler.resources
+C:\Users\Deniz\Source\Repos\denizkara-dnz\KutuphaneOtomasyonu\KutuphaneOtomasyonu\obj\Debug\KutuphaneOtomasyonu.frmEmanetler.resources

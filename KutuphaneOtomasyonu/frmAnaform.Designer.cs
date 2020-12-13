@@ -29,16 +29,20 @@
         private void InitializeComponent()
         {
             this.pnlUst = new System.Windows.Forms.Panel();
+            this.pbLogo = new System.Windows.Forms.PictureBox();
             this.btnCikis = new System.Windows.Forms.Button();
             this.btnEmanetler = new System.Windows.Forms.Button();
             this.btnKitaplar = new System.Windows.Forms.Button();
             this.btnKisiler = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlSol = new System.Windows.Forms.Panel();
             this.pnlUst.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlUst
             // 
+            this.pnlUst.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnlUst.Controls.Add(this.pbLogo);
             this.pnlUst.Controls.Add(this.btnCikis);
             this.pnlUst.Controls.Add(this.btnEmanetler);
             this.pnlUst.Controls.Add(this.btnKitaplar);
@@ -46,12 +50,22 @@
             this.pnlUst.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlUst.Location = new System.Drawing.Point(0, 0);
             this.pnlUst.Name = "pnlUst";
-            this.pnlUst.Size = new System.Drawing.Size(895, 75);
+            this.pnlUst.Size = new System.Drawing.Size(931, 75);
             this.pnlUst.TabIndex = 0;
+            // 
+            // pbLogo
+            // 
+            this.pbLogo.BackColor = System.Drawing.SystemColors.Control;
+            this.pbLogo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pbLogo.Location = new System.Drawing.Point(0, 0);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.Size = new System.Drawing.Size(220, 75);
+            this.pbLogo.TabIndex = 4;
+            this.pbLogo.TabStop = false;
             // 
             // btnCikis
             // 
-            this.btnCikis.Location = new System.Drawing.Point(643, 12);
+            this.btnCikis.Location = new System.Drawing.Point(768, 12);
             this.btnCikis.Name = "btnCikis";
             this.btnCikis.Size = new System.Drawing.Size(100, 50);
             this.btnCikis.TabIndex = 3;
@@ -61,52 +75,58 @@
             // 
             // btnEmanetler
             // 
-            this.btnEmanetler.Location = new System.Drawing.Point(479, 12);
+            this.btnEmanetler.Location = new System.Drawing.Point(604, 12);
             this.btnEmanetler.Name = "btnEmanetler";
             this.btnEmanetler.Size = new System.Drawing.Size(100, 50);
             this.btnEmanetler.TabIndex = 2;
             this.btnEmanetler.Text = "Emanetler";
             this.btnEmanetler.UseVisualStyleBackColor = true;
+            this.btnEmanetler.Click += new System.EventHandler(this.btnEmanetler_Click);
             // 
             // btnKitaplar
             // 
-            this.btnKitaplar.Location = new System.Drawing.Point(315, 12);
+            this.btnKitaplar.Location = new System.Drawing.Point(440, 12);
             this.btnKitaplar.Name = "btnKitaplar";
             this.btnKitaplar.Size = new System.Drawing.Size(100, 50);
             this.btnKitaplar.TabIndex = 1;
             this.btnKitaplar.Text = "Kitaplar";
             this.btnKitaplar.UseVisualStyleBackColor = true;
+            this.btnKitaplar.Click += new System.EventHandler(this.btnKitaplar_Click);
             // 
             // btnKisiler
             // 
-            this.btnKisiler.Location = new System.Drawing.Point(151, 12);
+            this.btnKisiler.Location = new System.Drawing.Point(276, 12);
             this.btnKisiler.Name = "btnKisiler";
             this.btnKisiler.Size = new System.Drawing.Size(100, 50);
             this.btnKisiler.TabIndex = 0;
             this.btnKisiler.Text = "Kişiler";
             this.btnKisiler.UseVisualStyleBackColor = true;
+            this.btnKisiler.Click += new System.EventHandler(this.btnKisiler_Click);
             // 
-            // panel1
+            // pnlSol
             // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 75);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(170, 443);
-            this.panel1.TabIndex = 1;
+            this.pnlSol.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnlSol.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlSol.Location = new System.Drawing.Point(0, 75);
+            this.pnlSol.Name = "pnlSol";
+            this.pnlSol.Size = new System.Drawing.Size(220, 514);
+            this.pnlSol.TabIndex = 1;
             // 
             // frmAnaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(895, 518);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(931, 589);
+            this.Controls.Add(this.pnlSol);
             this.Controls.Add(this.pnlUst);
+            this.IsMdiContainer = true;
             this.MaximizeBox = false;
             this.Name = "frmAnaForm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "KutuphaneOtomasyonu";
             this.pnlUst.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -118,7 +138,8 @@
         private System.Windows.Forms.Button btnEmanetler;
         private System.Windows.Forms.Button btnKitaplar;
         private System.Windows.Forms.Button btnKisiler;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlSol;
+        private System.Windows.Forms.PictureBox pbLogo;
     }
 }
 

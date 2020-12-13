@@ -52,10 +52,37 @@
     <Compile Include="frmAnaForm.Designer.cs">
       <DependentUpon>frmAnaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEmanetler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEmanetler.Designer.cs">
+      <DependentUpon>frmEmanetler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmKisiler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKisiler.Designer.cs">
+      <DependentUpon>frmKisiler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmKitaplar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKitaplar.Designer.cs">
+      <DependentUpon>frmKitaplar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmAnaForm.resx">
       <DependentUpon>frmAnaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEmanetler.resx">
+      <DependentUpon>frmEmanetler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKisiler.resx">
+      <DependentUpon>frmKisiler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKitaplar.resx">
+      <DependentUpon>frmKitaplar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
