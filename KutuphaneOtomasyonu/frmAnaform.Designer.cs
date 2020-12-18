@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             this.pnlUst = new System.Windows.Forms.Panel();
-            this.pbLogo = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnCikis = new System.Windows.Forms.Button();
             this.btnEmanetler = new System.Windows.Forms.Button();
             this.btnKitaplar = new System.Windows.Forms.Button();
             this.btnKisiler = new System.Windows.Forms.Button();
             this.pnlSol = new System.Windows.Forms.Panel();
             this.pnlUst.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlUst
             // 
             this.pnlUst.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pnlUst.Controls.Add(this.pbLogo);
+            this.pnlUst.Controls.Add(this.pictureBox1);
             this.pnlUst.Controls.Add(this.btnCikis);
             this.pnlUst.Controls.Add(this.btnEmanetler);
             this.pnlUst.Controls.Add(this.btnKitaplar);
@@ -53,15 +53,15 @@
             this.pnlUst.Size = new System.Drawing.Size(931, 75);
             this.pnlUst.TabIndex = 0;
             // 
-            // pbLogo
+            // pictureBox1
             // 
-            this.pbLogo.BackColor = System.Drawing.SystemColors.Control;
-            this.pbLogo.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pbLogo.Location = new System.Drawing.Point(0, 0);
-            this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(220, 75);
-            this.pbLogo.TabIndex = 4;
-            this.pbLogo.TabStop = false;
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(220, 75);
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
             // 
             // btnCikis
             // 
@@ -126,7 +126,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "KutuphaneOtomasyonu";
             this.pnlUst.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -139,7 +139,7 @@
         private System.Windows.Forms.Button btnKitaplar;
         private System.Windows.Forms.Button btnKisiler;
         private System.Windows.Forms.Panel pnlSol;
-        private System.Windows.Forms.PictureBox pbLogo;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

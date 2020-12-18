@@ -24,6 +24,10 @@ namespace KutuphaneOtomasyonu
 
         private void btnKisiler_Click(object sender, EventArgs e)
         {
+            foreach (Form item in this.MdiChildren)
+            {
+                item.Dispose();
+            }
             frmKisiler Kisi = new frmKisiler();
             Kisi.MdiParent = this;
             //Kisi.Dock = DockStyle.Fill;
@@ -34,6 +38,10 @@ namespace KutuphaneOtomasyonu
 
         private void btnKitaplar_Click(object sender, EventArgs e)
         {
+            foreach (Form item in this.MdiChildren)
+            {
+                item.Dispose();
+            }
             frmKitaplar Kitap = new frmKitaplar();
             Kitap.MdiParent = this;
             //Kitap.Dock = DockStyle.Fill;
@@ -44,6 +52,10 @@ namespace KutuphaneOtomasyonu
 
         private void btnEmanetler_Click(object sender, EventArgs e)
         {
+            foreach (Form item in this.MdiChildren)
+            {
+                item.Dispose();
+            }
             frmEmanetler Emanet = new frmEmanetler();
             Emanet.MdiParent = this;
             //Emanet.Dock = DockStyle.Fill;
