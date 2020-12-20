@@ -35,17 +35,18 @@
             this.clmKitapAciklama = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmKitapAdet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbKitapGuncelle = new System.Windows.Forms.GroupBox();
-            this.btnKitapGuncelle = new System.Windows.Forms.Button();
             this.txtGuncelleKitapAciklama = new System.Windows.Forms.RichTextBox();
+            this.btnKitapSil = new System.Windows.Forms.Button();
             this.txtGuncelleKitapAdet = new System.Windows.Forms.TextBox();
+            this.btnKitapGuncelle = new System.Windows.Forms.Button();
             this.txtGuncelleKitapYazar = new System.Windows.Forms.TextBox();
             this.txtGuncelleKitapAdi = new System.Windows.Forms.TextBox();
             this.lblGuncelleKitapAciklama = new System.Windows.Forms.Label();
             this.lblGuncelleKitapAdet = new System.Windows.Forms.Label();
             this.lblGuncelleKitapYazar = new System.Windows.Forms.Label();
             this.lblGuncelleKitapAdi = new System.Windows.Forms.Label();
-            this.gbKitapKaydet = new System.Windows.Forms.GroupBox();
             this.btnKitapKaydet = new System.Windows.Forms.Button();
+            this.gbKitapKaydet = new System.Windows.Forms.GroupBox();
             this.txtKaydetKitapAciklama = new System.Windows.Forms.RichTextBox();
             this.txtKaydetKitapAdet = new System.Windows.Forms.TextBox();
             this.txtKaydetKitapYazari = new System.Windows.Forms.TextBox();
@@ -109,9 +110,10 @@
             // gbKitapGuncelle
             // 
             this.gbKitapGuncelle.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.gbKitapGuncelle.Controls.Add(this.btnKitapGuncelle);
             this.gbKitapGuncelle.Controls.Add(this.txtGuncelleKitapAciklama);
+            this.gbKitapGuncelle.Controls.Add(this.btnKitapSil);
             this.gbKitapGuncelle.Controls.Add(this.txtGuncelleKitapAdet);
+            this.gbKitapGuncelle.Controls.Add(this.btnKitapGuncelle);
             this.gbKitapGuncelle.Controls.Add(this.txtGuncelleKitapYazar);
             this.gbKitapGuncelle.Controls.Add(this.txtGuncelleKitapAdi);
             this.gbKitapGuncelle.Controls.Add(this.lblGuncelleKitapAciklama);
@@ -123,16 +125,7 @@
             this.gbKitapGuncelle.Size = new System.Drawing.Size(325, 259);
             this.gbKitapGuncelle.TabIndex = 1;
             this.gbKitapGuncelle.TabStop = false;
-            this.gbKitapGuncelle.Text = "Güncelle";
-            // 
-            // btnKitapGuncelle
-            // 
-            this.btnKitapGuncelle.Location = new System.Drawing.Point(112, 221);
-            this.btnKitapGuncelle.Name = "btnKitapGuncelle";
-            this.btnKitapGuncelle.Size = new System.Drawing.Size(91, 32);
-            this.btnKitapGuncelle.TabIndex = 17;
-            this.btnKitapGuncelle.Text = "Güncelle";
-            this.btnKitapGuncelle.UseVisualStyleBackColor = true;
+            this.gbKitapGuncelle.Text = "Kitap Güncelle";
             // 
             // txtGuncelleKitapAciklama
             // 
@@ -142,12 +135,30 @@
             this.txtGuncelleKitapAciklama.TabIndex = 16;
             this.txtGuncelleKitapAciklama.Text = "";
             // 
+            // btnKitapSil
+            // 
+            this.btnKitapSil.Location = new System.Drawing.Point(27, 221);
+            this.btnKitapSil.Name = "btnKitapSil";
+            this.btnKitapSil.Size = new System.Drawing.Size(91, 32);
+            this.btnKitapSil.TabIndex = 11;
+            this.btnKitapSil.Text = "Sil";
+            this.btnKitapSil.UseVisualStyleBackColor = true;
+            // 
             // txtGuncelleKitapAdet
             // 
             this.txtGuncelleKitapAdet.Location = new System.Drawing.Point(104, 97);
             this.txtGuncelleKitapAdet.Name = "txtGuncelleKitapAdet";
             this.txtGuncelleKitapAdet.Size = new System.Drawing.Size(210, 20);
             this.txtGuncelleKitapAdet.TabIndex = 15;
+            // 
+            // btnKitapGuncelle
+            // 
+            this.btnKitapGuncelle.Location = new System.Drawing.Point(206, 221);
+            this.btnKitapGuncelle.Name = "btnKitapGuncelle";
+            this.btnKitapGuncelle.Size = new System.Drawing.Size(91, 32);
+            this.btnKitapGuncelle.TabIndex = 10;
+            this.btnKitapGuncelle.Text = "Güncelle";
+            this.btnKitapGuncelle.UseVisualStyleBackColor = true;
             // 
             // txtGuncelleKitapYazar
             // 
@@ -199,6 +210,15 @@
             this.lblGuncelleKitapAdi.TabIndex = 9;
             this.lblGuncelleKitapAdi.Text = "Kitap Adı";
             // 
+            // btnKitapKaydet
+            // 
+            this.btnKitapKaydet.Location = new System.Drawing.Point(117, 221);
+            this.btnKitapKaydet.Name = "btnKitapKaydet";
+            this.btnKitapKaydet.Size = new System.Drawing.Size(91, 32);
+            this.btnKitapKaydet.TabIndex = 17;
+            this.btnKitapKaydet.Text = "Kaydet";
+            this.btnKitapKaydet.UseVisualStyleBackColor = true;
+            // 
             // gbKitapKaydet
             // 
             this.gbKitapKaydet.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -216,16 +236,7 @@
             this.gbKitapKaydet.Size = new System.Drawing.Size(325, 259);
             this.gbKitapKaydet.TabIndex = 2;
             this.gbKitapKaydet.TabStop = false;
-            this.gbKitapKaydet.Text = "Kaydet";
-            // 
-            // btnKitapKaydet
-            // 
-            this.btnKitapKaydet.Location = new System.Drawing.Point(112, 221);
-            this.btnKitapKaydet.Name = "btnKitapKaydet";
-            this.btnKitapKaydet.Size = new System.Drawing.Size(91, 32);
-            this.btnKitapKaydet.TabIndex = 8;
-            this.btnKitapKaydet.Text = "Kaydet";
-            this.btnKitapKaydet.UseVisualStyleBackColor = true;
+            this.gbKitapKaydet.Text = "Kitap Kaydet";
             // 
             // txtKaydetKitapAciklama
             // 
@@ -325,7 +336,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clmKitapAciklama;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmKitapAdet;
         private System.Windows.Forms.GroupBox gbKitapGuncelle;
-        private System.Windows.Forms.Button btnKitapGuncelle;
+        private System.Windows.Forms.Button btnKitapKaydet;
         private System.Windows.Forms.RichTextBox txtGuncelleKitapAciklama;
         private System.Windows.Forms.TextBox txtGuncelleKitapAdet;
         private System.Windows.Forms.TextBox txtGuncelleKitapYazar;
@@ -335,7 +346,6 @@
         private System.Windows.Forms.Label lblGuncelleKitapYazar;
         private System.Windows.Forms.Label lblGuncelleKitapAdi;
         private System.Windows.Forms.GroupBox gbKitapKaydet;
-        private System.Windows.Forms.Button btnKitapKaydet;
         private System.Windows.Forms.RichTextBox txtKaydetKitapAciklama;
         private System.Windows.Forms.TextBox txtKaydetKitapAdet;
         private System.Windows.Forms.TextBox txtKaydetKitapYazari;
@@ -344,5 +354,7 @@
         private System.Windows.Forms.Label lblKaydetKitapAdet;
         private System.Windows.Forms.Label lblKaydetKitapYazar;
         private System.Windows.Forms.Label lblKaydetKitapAdi;
+        private System.Windows.Forms.Button btnKitapSil;
+        private System.Windows.Forms.Button btnKitapGuncelle;
     }
 }
