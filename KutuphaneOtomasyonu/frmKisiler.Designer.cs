@@ -39,7 +39,7 @@
             this.clmKisiAdres = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbKisiKaydet = new System.Windows.Forms.GroupBox();
             this.btnKisiKaydet = new System.Windows.Forms.Button();
-            this.txtKaydetKisiAdres = new System.Windows.Forms.RichTextBox();
+            this.rtbKaydetKisiAdres = new System.Windows.Forms.RichTextBox();
             this.txtKaydetKisiTcNo = new System.Windows.Forms.TextBox();
             this.txtKaydetKisiTelNo = new System.Windows.Forms.TextBox();
             this.txtKaydetKisiAd_Soyad = new System.Windows.Forms.TextBox();
@@ -50,7 +50,7 @@
             this.btnKisiSil = new System.Windows.Forms.Button();
             this.btnKisiGuncelle = new System.Windows.Forms.Button();
             this.gbKisiGuncelle = new System.Windows.Forms.GroupBox();
-            this.txtGuncelleKisiAdres = new System.Windows.Forms.RichTextBox();
+            this.rtbGuncelleKisiAdres = new System.Windows.Forms.RichTextBox();
             this.txtGuncelleKisiTcNo = new System.Windows.Forms.TextBox();
             this.txtGuncelleKisiTelNo = new System.Windows.Forms.TextBox();
             this.txtGuncelleKisiAd_Soyad = new System.Windows.Forms.TextBox();
@@ -65,6 +65,9 @@
             // 
             // dgKisiler
             // 
+            this.dgKisiler.AllowUserToAddRows = false;
+            this.dgKisiler.AllowUserToResizeColumns = false;
+            this.dgKisiler.AllowUserToResizeRows = false;
             this.dgKisiler.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -74,7 +77,7 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgKisiler.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgKisiler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgKisiler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgKisiler.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmKisiID,
             this.clmKisiAd_Soyad,
@@ -91,7 +94,9 @@
             this.dgKisiler.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgKisiler.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgKisiler.Location = new System.Drawing.Point(0, 277);
+            this.dgKisiler.MultiSelect = false;
             this.dgKisiler.Name = "dgKisiler";
+            this.dgKisiler.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -100,14 +105,18 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgKisiler.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgKisiler.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgKisiler.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgKisiler.Size = new System.Drawing.Size(707, 233);
             this.dgKisiler.TabIndex = 1;
+            this.dgKisiler.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgKisiler_CellMouseDoubleClick);
             // 
             // clmKisiID
             // 
             this.clmKisiID.DataPropertyName = "KisiID";
             this.clmKisiID.HeaderText = "KisiID";
             this.clmKisiID.Name = "clmKisiID";
+            this.clmKisiID.ReadOnly = true;
             this.clmKisiID.Visible = false;
             // 
             // clmKisiAd_Soyad
@@ -115,30 +124,34 @@
             this.clmKisiAd_Soyad.DataPropertyName = "KisiAd_Soyad";
             this.clmKisiAd_Soyad.HeaderText = "Ad Soyad";
             this.clmKisiAd_Soyad.Name = "clmKisiAd_Soyad";
+            this.clmKisiAd_Soyad.ReadOnly = true;
             // 
             // clmKisiTel_No
             // 
             this.clmKisiTel_No.DataPropertyName = "KisiTel_No";
             this.clmKisiTel_No.HeaderText = "Telefon Numarası";
             this.clmKisiTel_No.Name = "clmKisiTel_No";
+            this.clmKisiTel_No.ReadOnly = true;
             // 
             // clmKisiTcNo
             // 
             this.clmKisiTcNo.DataPropertyName = "KisiTcNo";
             this.clmKisiTcNo.HeaderText = "TC Kimlik No";
             this.clmKisiTcNo.Name = "clmKisiTcNo";
+            this.clmKisiTcNo.ReadOnly = true;
             // 
             // clmKisiAdres
             // 
             this.clmKisiAdres.DataPropertyName = "KisiAdres";
             this.clmKisiAdres.HeaderText = "Adres";
             this.clmKisiAdres.Name = "clmKisiAdres";
+            this.clmKisiAdres.ReadOnly = true;
             // 
             // gbKisiKaydet
             // 
             this.gbKisiKaydet.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.gbKisiKaydet.Controls.Add(this.btnKisiKaydet);
-            this.gbKisiKaydet.Controls.Add(this.txtKaydetKisiAdres);
+            this.gbKisiKaydet.Controls.Add(this.rtbKaydetKisiAdres);
             this.gbKisiKaydet.Controls.Add(this.txtKaydetKisiTcNo);
             this.gbKisiKaydet.Controls.Add(this.txtKaydetKisiTelNo);
             this.gbKisiKaydet.Controls.Add(this.txtKaydetKisiAd_Soyad);
@@ -161,14 +174,15 @@
             this.btnKisiKaydet.TabIndex = 17;
             this.btnKisiKaydet.Text = "Kaydet";
             this.btnKisiKaydet.UseVisualStyleBackColor = true;
+            this.btnKisiKaydet.Click += new System.EventHandler(this.btnKisiKaydet_Click);
             // 
-            // txtKaydetKisiAdres
+            // rtbKaydetKisiAdres
             // 
-            this.txtKaydetKisiAdres.Location = new System.Drawing.Point(104, 132);
-            this.txtKaydetKisiAdres.Name = "txtKaydetKisiAdres";
-            this.txtKaydetKisiAdres.Size = new System.Drawing.Size(210, 79);
-            this.txtKaydetKisiAdres.TabIndex = 7;
-            this.txtKaydetKisiAdres.Text = "";
+            this.rtbKaydetKisiAdres.Location = new System.Drawing.Point(104, 132);
+            this.rtbKaydetKisiAdres.Name = "rtbKaydetKisiAdres";
+            this.rtbKaydetKisiAdres.Size = new System.Drawing.Size(210, 79);
+            this.rtbKaydetKisiAdres.TabIndex = 7;
+            this.rtbKaydetKisiAdres.Text = "";
             // 
             // txtKaydetKisiTcNo
             // 
@@ -235,6 +249,7 @@
             this.btnKisiSil.TabIndex = 9;
             this.btnKisiSil.Text = "Sil";
             this.btnKisiSil.UseVisualStyleBackColor = true;
+            this.btnKisiSil.Click += new System.EventHandler(this.btnKisiSil_Click);
             // 
             // btnKisiGuncelle
             // 
@@ -244,11 +259,12 @@
             this.btnKisiGuncelle.TabIndex = 8;
             this.btnKisiGuncelle.Text = "Güncelle";
             this.btnKisiGuncelle.UseVisualStyleBackColor = true;
+            this.btnKisiGuncelle.Click += new System.EventHandler(this.btnKisiGuncelle_Click);
             // 
             // gbKisiGuncelle
             // 
             this.gbKisiGuncelle.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.gbKisiGuncelle.Controls.Add(this.txtGuncelleKisiAdres);
+            this.gbKisiGuncelle.Controls.Add(this.rtbGuncelleKisiAdres);
             this.gbKisiGuncelle.Controls.Add(this.btnKisiSil);
             this.gbKisiGuncelle.Controls.Add(this.btnKisiGuncelle);
             this.gbKisiGuncelle.Controls.Add(this.txtGuncelleKisiTcNo);
@@ -258,6 +274,7 @@
             this.gbKisiGuncelle.Controls.Add(this.lblGuncelleKisiTcNo);
             this.gbKisiGuncelle.Controls.Add(this.lblGuncelleKisiTelNo);
             this.gbKisiGuncelle.Controls.Add(this.lblGuncelleKisiAd_Soyad);
+            this.gbKisiGuncelle.Enabled = false;
             this.gbKisiGuncelle.Location = new System.Drawing.Point(370, 12);
             this.gbKisiGuncelle.Name = "gbKisiGuncelle";
             this.gbKisiGuncelle.Size = new System.Drawing.Size(325, 259);
@@ -265,13 +282,13 @@
             this.gbKisiGuncelle.TabStop = false;
             this.gbKisiGuncelle.Text = "Kişi Güncelle";
             // 
-            // txtGuncelleKisiAdres
+            // rtbGuncelleKisiAdres
             // 
-            this.txtGuncelleKisiAdres.Location = new System.Drawing.Point(104, 132);
-            this.txtGuncelleKisiAdres.Name = "txtGuncelleKisiAdres";
-            this.txtGuncelleKisiAdres.Size = new System.Drawing.Size(210, 79);
-            this.txtGuncelleKisiAdres.TabIndex = 16;
-            this.txtGuncelleKisiAdres.Text = "";
+            this.rtbGuncelleKisiAdres.Location = new System.Drawing.Point(104, 132);
+            this.rtbGuncelleKisiAdres.Name = "rtbGuncelleKisiAdres";
+            this.rtbGuncelleKisiAdres.Size = new System.Drawing.Size(210, 79);
+            this.rtbGuncelleKisiAdres.TabIndex = 16;
+            this.rtbGuncelleKisiAdres.Text = "";
             // 
             // txtGuncelleKisiTcNo
             // 
@@ -345,6 +362,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Load += new System.EventHandler(this.frmKisiler_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgKisiler)).EndInit();
             this.gbKisiKaydet.ResumeLayout(false);
             this.gbKisiKaydet.PerformLayout();
@@ -366,7 +384,7 @@
         private System.Windows.Forms.Button btnKisiGuncelle;
         private System.Windows.Forms.GroupBox gbKisiGuncelle;
         private System.Windows.Forms.Button btnKisiKaydet;
-        private System.Windows.Forms.RichTextBox txtGuncelleKisiAdres;
+        private System.Windows.Forms.RichTextBox rtbGuncelleKisiAdres;
         private System.Windows.Forms.TextBox txtGuncelleKisiTcNo;
         private System.Windows.Forms.TextBox txtGuncelleKisiTelNo;
         private System.Windows.Forms.TextBox txtGuncelleKisiAd_Soyad;
@@ -374,7 +392,7 @@
         private System.Windows.Forms.Label lblGuncelleKisiTcNo;
         private System.Windows.Forms.Label lblGuncelleKisiTelNo;
         private System.Windows.Forms.Label lblGuncelleKisiAd_Soyad;
-        private System.Windows.Forms.RichTextBox txtKaydetKisiAdres;
+        private System.Windows.Forms.RichTextBox rtbKaydetKisiAdres;
         private System.Windows.Forms.TextBox txtKaydetKisiTcNo;
         private System.Windows.Forms.TextBox txtKaydetKisiTelNo;
         private System.Windows.Forms.TextBox txtKaydetKisiAd_Soyad;

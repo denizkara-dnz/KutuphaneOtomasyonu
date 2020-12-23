@@ -13,8 +13,9 @@ namespace KutuphaneOtomasyonu
         SqlConnection con;
         public Veritabani()
         {
-            con = new SqlConnection("server=.;database=KutuphaneDB;Integrated Security=true");
+            con = new SqlConnection("Data Source=VAIO-SONY\\SQLEXPRESS;Initial Catalog=KutuphaneDB;Integrated Security=True");
         }
+
         #region Kitaplar
         public bool KitapEkle(string KitapAdi, string YazarAdi, string Aciklama, int Adet)
         {
@@ -165,21 +166,19 @@ INSERT INTO Kisi_Kitap(KisiID,KitapID,AldigiTarih,TeslimTarihi) VALUES(@KisiID,@
             con.Close();
             return durum;
         }
-        public bool EmanetGuncelle(int ID, string KitapAdi, string KisiAdi, string AldigiTarih, string iadeTarihi)
+        public bool EmanetGuncelle(int ID, string KitapAdi, string KisiAdi, string iadeTarihi)
         {
             bool durum = false;
-            SqlCommand cmd = new SqlCommand(@"DECLARE @TeslimTarihi varchar(50) = @Teslim, @AldigiTarih varchar(50) = @Aldigi
+            SqlCommand cmd = new SqlCommand(@"DECLARE @TeslimTarihi varchar(50) = @Teslim
 DECLARE @KisiAd_Soyad varchar(150) = @KisiAdi, @KitapAdi varchar(100) = @KitapAdi
 UPDATE Kisi_Kitap SET KisiID = (SELECT Kisiler.KisiID FROM Kisiler WHERE Kisiler.KisiAd_Soyad = @KisiAd_Soyad),
 KitapID = (SELECT Kitaplar.KitapID FROM Kitaplar WHERE Kitaplar.KitapID = @KitapAdi),
-AldigiTarih = @AldigiTarih,
 TeslimTarihi = @TeslimTarihi
 WHERE Kisi_Kitap.ID = @ID", con);
-            cmd.Parameters.AddWithValue("@Aldigi", AldigiTarih);
-            cmd.Parameters.AddWithValue("@Teslim", iadeTarihi);
+            cmd.Parameters.AddWithValue("@ID", ID);
             cmd.Parameters.AddWithValue("@KitapAdi", KitapAdi);
             cmd.Parameters.AddWithValue("@KisiAdi", KisiAdi);
-            cmd.Parameters.AddWithValue("@ID", ID);
+            cmd.Parameters.AddWithValue("@Teslim", iadeTarihi);
             con.Open();
             try
             {
@@ -251,7 +250,8 @@ WHERE Kisi_Kitap.ID = @ID", con);
         public DataTable TumEmanetler()
         {
             DataTable tbl = new DataTable();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Kisi_Kitap", con);
+            SqlCommand cmd = new SqlCommand("SELECT ID,(SELECT KitapAdi FROM Kitaplar WHERE Kisi_Kitap.KitapID = KitapID) AS KitapAdi,(SELECT KisiAd_Soyad FROM Kisiler WHERE Kisi_Kitap.KisiID = KisiID) AS KisiAd_Soyad,AldigiTarih, TeslimTarihi FROM Kisi_Kitap", con);
+            //SqlCommand cmd = new SqlCommand("SELECT * FROM Kisi_Kitap", con);
             con.Open();
             try
             {
@@ -270,7 +270,7 @@ WHERE Kisi_Kitap.ID = @ID", con);
         public List<string> KisiAd_Soyad()
         {
             List<string> list = new List<string>();
-            SqlCommand cmd = new SqlCommand("SELECT Kisiler.KisiAd_Soyad FROM Kisiler",con);
+            SqlCommand cmd = new SqlCommand("SELECT Kisiler.KisiAd_Soyad FROM Kisiler", con);
             con.Open();
             try
             {
