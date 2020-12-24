@@ -35,8 +35,13 @@
             this.btnKitaplar = new System.Windows.Forms.Button();
             this.btnKisiler = new System.Windows.Forms.Button();
             this.pnlSol = new System.Windows.Forms.Panel();
+            this.dgEmanet = new System.Windows.Forms.DataGridView();
+            this.clmKitapAdi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmKisiAdi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlUst.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pnlSol.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgEmanet)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlUst
@@ -106,11 +111,46 @@
             // pnlSol
             // 
             this.pnlSol.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnlSol.Controls.Add(this.dgEmanet);
             this.pnlSol.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlSol.Location = new System.Drawing.Point(0, 75);
             this.pnlSol.Name = "pnlSol";
             this.pnlSol.Size = new System.Drawing.Size(220, 514);
             this.pnlSol.TabIndex = 1;
+            // 
+            // dgEmanet
+            // 
+            this.dgEmanet.AllowUserToAddRows = false;
+            this.dgEmanet.AllowUserToResizeColumns = false;
+            this.dgEmanet.AllowUserToResizeRows = false;
+            this.dgEmanet.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgEmanet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgEmanet.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clmKitapAdi,
+            this.clmKisiAdi});
+            this.dgEmanet.Location = new System.Drawing.Point(3, 6);
+            this.dgEmanet.MultiSelect = false;
+            this.dgEmanet.Name = "dgEmanet";
+            this.dgEmanet.ReadOnly = true;
+            this.dgEmanet.RowHeadersVisible = false;
+            this.dgEmanet.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgEmanet.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgEmanet.Size = new System.Drawing.Size(214, 150);
+            this.dgEmanet.TabIndex = 0;
+            // 
+            // clmKitapAdi
+            // 
+            this.clmKitapAdi.DataPropertyName = "KitapAdi";
+            this.clmKitapAdi.HeaderText = "Kitap Adı";
+            this.clmKitapAdi.Name = "clmKitapAdi";
+            this.clmKitapAdi.ReadOnly = true;
+            // 
+            // clmKisiAdi
+            // 
+            this.clmKisiAdi.DataPropertyName = "KisiAd_Soyad";
+            this.clmKisiAdi.HeaderText = "Ad Soyad";
+            this.clmKisiAdi.Name = "clmKisiAdi";
+            this.clmKisiAdi.ReadOnly = true;
             // 
             // frmAnaForm
             // 
@@ -125,8 +165,11 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "KutuphaneOtomasyonu";
+            this.Load += new System.EventHandler(this.frmAnaForm_Load);
             this.pnlUst.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.pnlSol.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgEmanet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -140,6 +183,9 @@
         private System.Windows.Forms.Button btnKisiler;
         private System.Windows.Forms.Panel pnlSol;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridView dgEmanet;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmKitapAdi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmKisiAdi;
     }
 }
 

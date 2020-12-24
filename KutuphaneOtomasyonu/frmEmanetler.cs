@@ -92,7 +92,7 @@ namespace KutuphaneOtomasyonu
         {
             if (txtGuncelleKisiAd_Soyad.Text != "" && txtGuncelleKitapAdi.Text != "")
             {
-                bool durum = v.EmanetGuncelle(ID, txtGuncelleKitapAdi.Text, txtGuncelleKisiAd_Soyad.Text, dtpGuncelleiadeTarihi.Value.ToShortDateString());
+                bool durum = v.EmanetGuncelle(ID,txtGuncelleKitapAdi.Text,txtGuncelleKisiAd_Soyad.Text,dtpGuncelleiadeTarihi.Value.ToShortDateString());
                 if (durum)
                 {
                     GuncelleTemizle();

@@ -32,11 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgEmanetler = new System.Windows.Forms.DataGridView();
-            this.clmID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmKitapAdi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmKisiAd_Soyad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmAlinanTarih = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmTeslimTarihi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbEmanetKaydet = new System.Windows.Forms.GroupBox();
             this.dtpKaydetiadeTarihi = new System.Windows.Forms.DateTimePicker();
             this.btnEmanetKaydet = new System.Windows.Forms.Button();
@@ -54,6 +49,11 @@
             this.lblGuncelleiadeTarihi = new System.Windows.Forms.Label();
             this.lblGuncelleKitapAdi = new System.Windows.Forms.Label();
             this.lblGuncelleKisiAd_Soyad = new System.Windows.Forms.Label();
+            this.clmID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmKitapAdi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmKisiAd_Soyad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmAlinanTarih = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmTeslimTarihi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgEmanetler)).BeginInit();
             this.gbEmanetKaydet.SuspendLayout();
             this.gbEmanetGuncelle.SuspendLayout();
@@ -106,42 +106,6 @@
             this.dgEmanetler.Size = new System.Drawing.Size(707, 324);
             this.dgEmanetler.TabIndex = 2;
             this.dgEmanetler.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgEmanetler_CellMouseDoubleClick);
-            // 
-            // clmID
-            // 
-            this.clmID.DataPropertyName = "ID";
-            this.clmID.HeaderText = "ID";
-            this.clmID.Name = "clmID";
-            this.clmID.ReadOnly = true;
-            this.clmID.Visible = false;
-            // 
-            // clmKitapAdi
-            // 
-            this.clmKitapAdi.DataPropertyName = "KitapAdi";
-            this.clmKitapAdi.HeaderText = "Kitap Adı";
-            this.clmKitapAdi.Name = "clmKitapAdi";
-            this.clmKitapAdi.ReadOnly = true;
-            // 
-            // clmKisiAd_Soyad
-            // 
-            this.clmKisiAd_Soyad.DataPropertyName = "KisiAd_Soyad";
-            this.clmKisiAd_Soyad.HeaderText = "Alanın Adı Soyadı";
-            this.clmKisiAd_Soyad.Name = "clmKisiAd_Soyad";
-            this.clmKisiAd_Soyad.ReadOnly = true;
-            // 
-            // clmAlinanTarih
-            // 
-            this.clmAlinanTarih.DataPropertyName = "AldigiTarih";
-            this.clmAlinanTarih.HeaderText = "Alınan Tarih";
-            this.clmAlinanTarih.Name = "clmAlinanTarih";
-            this.clmAlinanTarih.ReadOnly = true;
-            // 
-            // clmTeslimTarihi
-            // 
-            this.clmTeslimTarihi.DataPropertyName = "TeslimTarihi";
-            this.clmTeslimTarihi.HeaderText = "Teslim Tarihi";
-            this.clmTeslimTarihi.Name = "clmTeslimTarihi";
-            this.clmTeslimTarihi.ReadOnly = true;
             // 
             // gbEmanetKaydet
             // 
@@ -313,6 +277,42 @@
             this.lblGuncelleKisiAd_Soyad.Size = new System.Drawing.Size(76, 13);
             this.lblGuncelleKisiAd_Soyad.TabIndex = 19;
             this.lblGuncelleKisiAd_Soyad.Text = "Kişi Adı Soyadı";
+            // 
+            // clmID
+            // 
+            this.clmID.DataPropertyName = "ID";
+            this.clmID.HeaderText = "ID";
+            this.clmID.Name = "clmID";
+            this.clmID.ReadOnly = true;
+            this.clmID.Visible = false;
+            // 
+            // clmKitapAdi
+            // 
+            this.clmKitapAdi.DataPropertyName = "KitapAdi";
+            this.clmKitapAdi.HeaderText = "Kitap Adı";
+            this.clmKitapAdi.Name = "clmKitapAdi";
+            this.clmKitapAdi.ReadOnly = true;
+            // 
+            // clmKisiAd_Soyad
+            // 
+            this.clmKisiAd_Soyad.DataPropertyName = "KisiAd_Soyad";
+            this.clmKisiAd_Soyad.HeaderText = "Alanın Adı Soyadı";
+            this.clmKisiAd_Soyad.Name = "clmKisiAd_Soyad";
+            this.clmKisiAd_Soyad.ReadOnly = true;
+            // 
+            // clmAlinanTarih
+            // 
+            this.clmAlinanTarih.DataPropertyName = "AldigiTarih";
+            this.clmAlinanTarih.HeaderText = "Alınan Tarih";
+            this.clmAlinanTarih.Name = "clmAlinanTarih";
+            this.clmAlinanTarih.ReadOnly = true;
+            // 
+            // clmTeslimTarihi
+            // 
+            this.clmTeslimTarihi.DataPropertyName = "TeslimTarihi";
+            this.clmTeslimTarihi.HeaderText = "Teslim Tarihi";
+            this.clmTeslimTarihi.Name = "clmTeslimTarihi";
+            this.clmTeslimTarihi.ReadOnly = true;
             // 
             // frmEmanetler
             // 

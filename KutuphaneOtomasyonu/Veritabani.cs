@@ -169,15 +169,16 @@ INSERT INTO Kisi_Kitap(KisiID,KitapID,AldigiTarih,TeslimTarihi) VALUES(@KisiID,@
         public bool EmanetGuncelle(int ID, string KitapAdi, string KisiAdi, string iadeTarihi)
         {
             bool durum = false;
-            SqlCommand cmd = new SqlCommand(@"DECLARE @TeslimTarihi varchar(50) = @Teslim
-DECLARE @KisiAd_Soyad varchar(150) = @KisiAdi, @KitapAdi varchar(100) = @KitapAdi
+            SqlCommand cmd = new SqlCommand(@"
+DECLARE @TeslimTarihi varchar(50) = @Teslim
+DECLARE @KisiAd_Soyad varchar(150) = @KisiAdi, @KitapAdi varchar(100) = @Kitap
 UPDATE Kisi_Kitap SET KisiID = (SELECT Kisiler.KisiID FROM Kisiler WHERE Kisiler.KisiAd_Soyad = @KisiAd_Soyad),
-KitapID = (SELECT Kitaplar.KitapID FROM Kitaplar WHERE Kitaplar.KitapID = @KitapAdi),
+KitapID = (SELECT Kitaplar.KitapID FROM Kitaplar WHERE Kitaplar.KitapAdi = @KitapAdi),
 TeslimTarihi = @TeslimTarihi
 WHERE Kisi_Kitap.ID = @ID", con);
             cmd.Parameters.AddWithValue("@ID", ID);
-            cmd.Parameters.AddWithValue("@KitapAdi", KitapAdi);
             cmd.Parameters.AddWithValue("@KisiAdi", KisiAdi);
+            cmd.Parameters.AddWithValue("@Kitap", KitapAdi);
             cmd.Parameters.AddWithValue("@Teslim", iadeTarihi);
             con.Open();
             try
@@ -250,13 +251,37 @@ WHERE Kisi_Kitap.ID = @ID", con);
         public DataTable TumEmanetler()
         {
             DataTable tbl = new DataTable();
-            SqlCommand cmd = new SqlCommand("SELECT ID,(SELECT KitapAdi FROM Kitaplar WHERE Kisi_Kitap.KitapID = KitapID) AS KitapAdi,(SELECT KisiAd_Soyad FROM Kisiler WHERE Kisi_Kitap.KisiID = KisiID) AS KisiAd_Soyad,AldigiTarih, TeslimTarihi FROM Kisi_Kitap", con);
-            //SqlCommand cmd = new SqlCommand("SELECT * FROM Kisi_Kitap", con);
+            SqlCommand cmd = new SqlCommand(@"CREATE TABLE #table
+(
+GelenID int IDENTITY(1,1) PRIMARY KEY NOT NULL,
+ID int NULL,
+KitapAdi varchar(150) NULL,
+KisiAd_Soyad varchar(100) NULL,
+AldigiTarih varchar(50) NULL,
+TeslimTarihi varchar(50) NULL
+)
+INSERT INTO #table(ID,AldigiTarih,TeslimTarihi) SELECT ID,AldigiTarih,TeslimTarihi FROM Kisi_Kitap
+DECLARE @uzunluk int = 0,@sayac int = 1;
+
+SELECT @uzunluk = COUNT(#table.GelenID) FROM #table
+
+DECLARE @ID int = 0
+WHILE @uzunluk >= @sayac
+BEGIN
+SELECT @ID = #table.ID FROM #table WHERE #table.GelenID = @sayac
+UPDATE #table SET 
+KisiAd_Soyad = (SELECT Kisiler.KisiAd_Soyad FROM Kisiler WHERE Kisiler.KisiID = (SELECT Kisi_Kitap.KisiID FROM Kisi_Kitap WHERE Kisi_Kitap.ID = @ID)),
+KitapAdi = (SELECT Kitaplar.KitapAdi FROM Kitaplar WHERE Kitaplar.KitapID = (SELECT Kisi_Kitap.KitapID FROM Kisi_Kitap WHERE Kisi_Kitap.ID = @ID))
+WHERE GelenID = @sayac
+SET @sayac += 1
+END
+SELECT * FROM #table", con);
             con.Open();
             try
             {
                 SqlDataReader sr = cmd.ExecuteReader();
                 tbl.Load(sr);
+                tbl.Columns.Remove(tbl.Columns[0]);
             }
             catch (Exception)
             {
@@ -304,6 +329,57 @@ WHERE Kisi_Kitap.ID = @ID", con);
             }
             con.Close();
             return list;
+        }
+        public DataTable EmanetGecenleri()
+        {
+            DataTable tbl = new DataTable();
+            SqlCommand cmd = new SqlCommand(@"CREATE TABLE #tablo
+(
+GelenID int IDENTITY(1,1) PRIMARY KEY NOT NULL,
+ID int NULL,
+KisiAd_Soyad varchar(150) NULL,
+KitapAdi varchar(100) NULL,
+TeslimTarihi varchar(50) NULL
+)
+DECLARE @Tarih varchar(50) = @BugununTarihi
+INSERT INTO #tablo(ID,TeslimTarihi) SELECT Kisi_Kitap.ID,Kisi_Kitap.TeslimTarihi FROM Kisi_Kitap
+DECLARE @uzunluk int = 0,@sayac int = 1;
+
+SELECT @uzunluk = COUNT(#tablo.GelenID) FROM #tablo
+DECLARE @a int = 0, @b int = 0,@ID int
+WHILE @uzunluk >= @sayac
+BEGIN
+SELECT @a = CONVERT(int,SUBSTRING(#tablo.TeslimTarihi,1,2)) FROM #tablo WHERE #tablo.GelenID = @sayac
+SET @b = CONVERT(int,SUBSTRING(@Tarih,1,2))
+IF @a >= @b
+BEGIN
+SELECT @ID = #tablo.ID FROM #tablo WHERE #tablo.GelenID = @sayac
+UPDATE #tablo SET 
+KisiAd_Soyad = (SELECT Kisiler.KisiAd_Soyad FROM Kisiler WHERE Kisiler.KisiID = (SELECT Kisi_Kitap.KisiID FROM Kisi_Kitap WHERE Kisi_Kitap.ID = @ID)),
+KitapAdi = (SELECT Kitaplar.KitapAdi FROM Kitaplar WHERE Kitaplar.KitapID = (SELECT Kisi_Kitap.KitapID FROM Kisi_Kitap WHERE Kisi_Kitap.ID = @ID))
+END
+ELSE
+BEGIN
+DELETE FROM #tablo WHERE #tablo.GelenID = @sayac
+END
+SET @sayac += 1
+END
+SELECT * FROM #tablo", con);
+            cmd.Parameters.AddWithValue("@BugununTarihi",DateTime.Now.ToShortDateString());
+            con.Open();
+            try
+            {
+                SqlDataReader sr = cmd.ExecuteReader();
+                tbl.Load(sr);
+                tbl.Columns.Remove(tbl.Columns[0]);
+                tbl.Columns.Remove(tbl.Columns[0]);
+                tbl.Columns.Remove(tbl.Columns[2]);
+            }
+            catch (Exception)
+            {
+            }
+            con.Close();
+            return tbl;
         }
         #endregion
     }

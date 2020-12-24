@@ -12,9 +12,11 @@ namespace KutuphaneOtomasyonu
 {
     public partial class frmAnaForm : Form
     {
+        Veritabani v;
         public frmAnaForm()
         {
             InitializeComponent();
+            v = new Veritabani();
         }
 
         private void btnCikis_Click(object sender, EventArgs e)
@@ -62,6 +64,11 @@ namespace KutuphaneOtomasyonu
             Emanet.Show();
             Emanet.Location = new Point(0, 0);
             //MessageBox.Show(Emanet.Size.Width + " : " + Emanet.Size.Height);
+        }
+
+        private void frmAnaForm_Load(object sender, EventArgs e)
+        {
+            dgEmanet.DataSource = v.EmanetGecenleri();
         }
     }
 }
